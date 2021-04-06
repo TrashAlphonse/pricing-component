@@ -11,20 +11,36 @@ function handleChange(prices) {
     });
 };
 
-function setAttributes(el, attrs) {
-    for (let key in attrs) {
-        el.setAttribute(key, attrs[key]);
-    }
-}
+// || FOR CHECKBOX SWITCH     
 
-document.getElementById("switchInput").addEventListener("change", function() {
-    if (this.checked) {
-        handleChange(monthlyPrices);
-        setAttributes(this, {"aria-checked": "true", "aria-label": "Monthly pricing"});
-    } else {
-        handleChange(annualPrices);
-        setAttributes(this, {"aria-checked": "false", "aria-label": "Annual pricing"});
-    }
+// function setAttributes(el, attrs) {
+//     for (let key in attrs) {
+//         el.setAttribute(key, attrs[key]);
+//     }
+// }
+
+// document.getElementById("switchInput").addEventListener("change", function() {
+//     if (this.checked) {
+//         handleChange(monthlyPrices);
+//         setAttributes(this, {"aria-checked": "true", "aria-label": "Monthly pricing"});
+//     } else {
+//         handleChange(annualPrices);
+//         setAttributes(this, {"aria-checked": "false", "aria-label": "Annual pricing"});
+//     }
+// });
+
+
+
+// || FOR RADIO SWITCH
+
+document.querySelectorAll(".switch-input").forEach((switchInput) => {
+    switchInput.addEventListener("change", function() {
+        if (this.value === "annual") {
+            handleChange(annualPrices);
+        } else if (this.value === "monthly") {
+            handleChange(monthlyPrices);
+        }
+    });
 });
 
 

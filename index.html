@@ -20,12 +20,24 @@
     <section class="pricing">
       <header>
         <h1 class="pricing__title">Our Pricing</h1>
-        <span class="pricing__period">Annually</span>
-        <label class="switch">
+        <!-- <span class="pricing__period">Annually</span> -->
+        <!-- <label class="switch">
           <input type="checkbox" id="switchInput" role="switch" aria-checked="false" aria-label="Annual pricing">
           <span class="slider"></span>
-        </label>
-        <span class="pricing__period">Monthly</span>
+        </label> -->
+        <fieldset aria-label="plan switcher" role="radiogroup">
+          <div class="switch-wrapper">
+            <label for="annual">Annually</label>
+            <span class="switch">
+              <input class="switch-input" type="radio" name="plan" id="annual" value="annual" checked>
+              <input class="switch-input" type="radio" name="plan" id="monthly" value="monthly">
+              <span aria-hidden="true" class="switch-bg"></span>
+              <span aria-hidden="true" class="switch-slider"></span>
+            </span>
+            <label for="monthly">Monthly</label>
+          </div>
+        </fieldset>
+        <!-- <span class="pricing__period">Monthly</span> -->
       </header>
 
       <div class="cards">
