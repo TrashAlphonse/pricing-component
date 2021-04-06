@@ -1,0 +1,254 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Montserrat", Verdana, sans-serif;
+    font-weight: 700;
+    font-size: 0.9375rem;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3 {
+    margin: 0;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+
+.container {
+    width: 100%;
+    padding: 3% 5%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(240, 78%, 98%);
+    background-image: url("./images/bg-top.svg"), url("./images/bg-bottom.svg");
+    background-repeat: no-repeat, no-repeat;
+    background-position: right top, left top 100%;
+}
+
+.pricing {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.pricing__title {
+    font-size: 1.7rem;
+    color:hsl(233, 13%, 49%);
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.pricing__period {
+    color:hsl(234, 14%, 74%);
+    vertical-align: sub;
+}
+
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 27px;
+  margin: 0 15px;
+}
+
+.switch input {
+    opacity: 0;
+    height: 0;
+    width: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    border-radius: 34px;
+  }
+  
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.320, 1.275);
+    border-radius: 50%;
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(22px);
+  }
+
+  input:checked + .slider {
+    background: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+  }
+  
+  
+
+.cards {
+    display: flex;
+    margin-top: 3em;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.card {
+    text-align: center;
+    min-width: 25%;
+    overflow: hidden;
+}
+
+.card--light {
+    background-color: #fff;
+    box-shadow: 0 5px 20px 0 rgba(0,0,0,.2);
+    color: hsl(233, 13%, 49%);
+    padding: 2.5em;
+}
+
+.card--dark {
+    background: linear-gradient(hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+    color: #fff;
+    border-radius: 10px;
+    padding: 3.5em;
+}
+
+.card:first-child {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.card:last-child {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.card__price {
+    font-size: 3rem;
+    margin: .4em 0;
+    min-width: 230px;
+}
+
+.card__price span:first-of-type {
+    font-size: .6em;
+    vertical-align: middle;
+    display: inline-block;
+    margin-right: -10px;
+}
+
+.card__price--dark {
+    color: hsl(232, 13%, 33%);
+}
+
+.card__features li {
+    padding: 1em 0;
+    border-bottom: 1px solid rgba(173,173,220,.5);
+}
+
+.card__features li:first-child {
+    border-top: 1px solid  rgba(173,173,220,.5);
+}
+
+.card__btn {
+    display: block;
+    padding: 1em 3em;
+    text-transform: uppercase;
+    border-radius: 10px;
+    letter-spacing: 1px;
+    margin-top: 2em;
+    height: 50px;
+}
+
+.card__btn:hover {
+    background: transparent;
+}
+
+.card__btn--light {
+    background-color: #fff;
+    color:hsl(237, 63%, 64%);
+}
+
+.card__btn--light:hover {
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+.card__btn--dark {
+    background: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+    color: #fff;
+}
+
+.card__btn--dark:hover {
+    color:hsl(237, 63%, 64%);
+    border: 1px solid hsl(237, 63%, 64%);
+}
+
+.attribution { 
+    font-size: 15px; 
+    text-align: center; 
+    padding-bottom: 2em;
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+
+
+
+@media screen and (max-width: 992px) {
+
+    .container {
+        background: hsl(240, 78%, 98%) url("./images/bg-top.svg") no-repeat right -175px top -50px;
+    }
+
+    .pricing__title {
+        margin-top: 5vw;
+    }
+
+    .cards {
+        flex-direction: column;
+    }
+
+    .card {
+        width: 100%;
+        margin-bottom: 40px;
+        border-radius: 10px;
+    }
+
+    .card--dark {
+        padding: 2.5em;
+    }
+
+}
