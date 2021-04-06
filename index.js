@@ -20,10 +20,10 @@ function setAttributes(el, attrs) {
 document.getElementById("switchInput").addEventListener("change", function() {
     if (this.checked) {
         handleChange(monthlyPrices);
-        setAttributes(this.parentElement, {"aria-checked": "true", "aria-label": "Monthly pricing"});
+        setAttributes(this, {"aria-checked": "true", "aria-label": "Monthly pricing"});
     } else {
         handleChange(annualPrices);
-        setAttributes(this.parentElement, {"aria-checked": "false", "aria-label": "Annual pricing"});
+        setAttributes(this, {"aria-checked": "false", "aria-label": "Annual pricing"});
     }
 });
 
